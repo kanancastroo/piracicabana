@@ -1,0 +1,18 @@
+pipeline {
+  agent any
+
+  stages {
+
+    stage('Automatic email notification') {
+      steps {
+          emailext(
+              attachLog: true,
+              body: '${CHANGES, showPaths=true, showDependencies=true, format="This is an automatic email sent from the build run from this job in Jenkins. To view further datails, please check console output at $BUILD_URL.\n\nAuthor: %a\nDate: %d\nMessage: %m\nPath: %p\nReview:%r"}', 
+              subject: '$PROJECT_NAME - Build #$BUILD_NUMBER - $BUILD_STATUS', 
+              to: 'kanan.silva@scipopulis.com'
+              )
+      }
+    }
+   
+  }
+}
