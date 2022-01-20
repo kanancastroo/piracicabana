@@ -7,7 +7,7 @@ pipeline {
       steps {
           emailext(
               attachLog: true,
-              body: '${CHANGES, showPaths=true, showDependencies=true, format="%a"}\n${CHANGES, showPaths=true, showDependencies=true, format="%d"}',  
+              body: 'This is an automatic email sent from the build run from this job in Jenkins. To view further datails, please check console output at $BUILD_URL.\nAuthor: ${CHANGES, showPaths=true, showDependencies=true, format="%a"}\nDate: ${CHANGES, showPaths=true, showDependencies=true, format="%d"}\nMessage: ${CHANGES, showPaths=true, showDependencies=true, format="%m"}\nPath: ${CHANGES, showPaths=true, showDependencies=true, format="%p"}\nReview: ${CHANGES, showPaths=true, showDependencies=true, format="%r"}',  
               subject: '$PROJECT_NAME - Build #$BUILD_NUMBER - $BUILD_STATUS', 
               to: 'kanan.silva@scipopulis.com'
               )
