@@ -3,6 +3,8 @@ pipeline {
 
   stages {
 
+
+
     stage('Automatic email notification') {
       steps {
           emailext(
