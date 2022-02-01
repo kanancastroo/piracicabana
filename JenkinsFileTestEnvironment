@@ -3,6 +3,9 @@ pipeline {
 
   stages {
 
+
+
+
     stage('Send email') {
       steps {
           emailext(
