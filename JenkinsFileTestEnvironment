@@ -1,6 +1,10 @@
 pipeline {
   agent any
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> 8821f4b95720da971f7c3726c76f182800525bbd
   stages {
     stage('Send email') {
       steps {
